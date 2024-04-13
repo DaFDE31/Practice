@@ -30,4 +30,30 @@ public class Timer {
     private int hours;
     private int minutes;
     private int seconds;
+
+    public Timer(){
+
+    }
+    public Timer(int time){
+    }
+    public void setTime(int time){
+
+    }
+    public void addTime(int time){
+
+    }
+    public void addTime(int hours, int minutes, int seconds){
+
+    }
+
+    public void addSecond(){
+
+    }
+    public void subtractSecond(){
+
+    }
+
+    public String toString(){
+        return hours + ":" + minutes + ":" + seconds;
+    }
 }
