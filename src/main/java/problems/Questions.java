@@ -1,0 +1,20 @@
+package problems;
+
+public class Questions {
+    /*
+    For this code, return the greatest common denominator of the two parameters, x and y
+    */
+    public int gcd(int x, int y){
+        return 0;
+    }
+
+    /*
+    Here, you should make a function that takes an array of strings and returns a similar array
+    where each string is turned to just the first and last letter.
+    EX: ["Hello", "World"] -> ["Ho", "Wd"]
+    EX: ["To", "The", "End"] -> ["To", "Te", "Ed"]
+     */
+    public int[] cut(int[] anArray){
+        return new int[0];
+    }
+}
