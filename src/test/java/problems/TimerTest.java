@@ -41,7 +41,7 @@ public class TimerTest {
     @Test
     public void addTest1(){
         tester.addTime(3600);
-        String expected = "2:0:0";
+        String expected = "1:0:0"; // Replace this 2 with 1
         String actual = tester.toString();
         Assert.assertEquals(expected,actual);
     }
@@ -49,13 +49,14 @@ public class TimerTest {
     @Test
     public void addTest2(){
         tester.addTime(4,20,100);
-        String expected = "6:21:40";
+        String expected = "4:21:40";   // Replace the 6 that's here with 4
         String actual = tester.toString();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void secondsTest1(){
+        tester.setTime(6,21,40); // Add this line
         tester.addSecond();
         String expected = "6:21:41";
         String actual = tester.toString();

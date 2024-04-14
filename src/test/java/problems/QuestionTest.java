@@ -20,7 +20,7 @@ public class QuestionTest {
 
     @Test
     public void gcfTest3(){
-        int expected = 5;
+        int expected = 10; // Replaced the 5 here with 10
         int actual = Questions.gcf(100,30);
         Assert.assertEquals(expected, actual);
     }
