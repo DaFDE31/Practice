@@ -24,7 +24,7 @@ public class Questions {
     }
 
     public static void replace(int[] anArray, int tobereplaced, int value){
-        //This method should replace the first value with the second one
+        //This method should replace all instances of the first value with the second one
         //EX: replaceAtindex([1,2,6,4], 6, 3) -> [1,2,3,4]
     }
 }
