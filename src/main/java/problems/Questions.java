@@ -27,4 +27,9 @@ public class Questions {
         //This method should replace all instances of the first value with the second one
         //EX: replace([1,2,6,4], 6, 3) -> [1,2,3,4]
     }
+
+    public static int longestArray( String[][] arrays){
+        //Return the length of the longest array in the 2D array
+        return 0;
+    }
 }
