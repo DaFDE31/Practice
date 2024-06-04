@@ -17,4 +17,14 @@ public class Questions {
     public static String[] cut(String[] anArray){
         return new String[0];
     }
+
+    public static void replaceAtindex(int[] anArray, int index, int value){
+        //This method should replace the value at index inside anArray with the value variable
+        //EX: replaceAtindex([1,2,6,4], 2, 3) -> [1,2,3,4]
+    }
+
+    public static void replace(int[] anArray, int tobereplaced, int value){
+        //This method should replace the first value with the second one
+        //EX: replaceAtindex([1,2,6,4], 6, 3) -> [1,2,3,4]
+    }
 }
