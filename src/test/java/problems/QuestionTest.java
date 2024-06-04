@@ -53,4 +53,43 @@ public class QuestionTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void IndexReplaceTest1(){
+        int [] array = {1,2,6,4};
+        Questions.replaceAtindex(array, 2, 3);
+        Assert.assertArrayEquals(new int[]{1,2,3,4}, array);
+    }
+
+    @Test
+    public void IndexReplaceTest2(){
+        int [] array = {10,9,8,7,2};
+        Questions.replaceAtindex(array, 4, 6);
+        Assert.assertArrayEquals(new int[]{10,9,8,7,6}, array);
+    }
+
+    @Test
+    public void replaceTest(){
+        int [] array = {1,2,6,4};
+        Questions.replace(array, 6, 3);
+        Assert.assertArrayEquals(new int[]{1,2,3,4}, array);
+    }
+
+    @Test
+    public void replaceTest2(){
+        int [] array = {10,9,8,10,10};
+        Questions.replace(array, 10, 1);
+        Assert.assertArrayEquals(new int[]{1,9,8,1,1}, array);
+    }
+
+    @Test
+    public void longestTest(){
+        int expected = 5;
+        int [] one = {};
+        int [] two = {1,2,3,4,5};
+        int actual = Questions.longestArray(new int[][]{one, two});
+        Assert.assertEquals(expected, actual);
+    }
+
+    
+
 }
