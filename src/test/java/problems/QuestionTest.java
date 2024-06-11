@@ -88,6 +88,14 @@ public class QuestionTest {
     }
 
     @Test
+    public void replaceTest3(){
+        String [] expected = {"Hello", "My", "Friends"};
+        String [] array = {"Hello", "All", "Friends"};
+        tester.replace(array, "All", "My");
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
     public void longestTest(){
         int expected = 5;
         Integer[][] he = {{}, {1,2,3,4,5}};
