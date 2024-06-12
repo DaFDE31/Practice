@@ -11,8 +11,30 @@ public class LinkedList<G>{
     headNode = new Node<>(n);
   }
 
-  private void insertNode(Node<G> newNode){
-    
+  public void insertAfter(G data, G newData){
+    Node<G> current = headNode;
+    while (current != null){
+      if (current.getData().equals(data)){
+        current.setNext(new Node<G>(newData, current.getNext()));
+        return; 
+      }
+    }
+  }
+
+
+  public void insertBefore(G data, G newData){
+    if (headNode.getData().equals(data)){
+      insertAtHead(data);
+    }
+    else{
+      Node<G> current = headNode;
+      while (current.hasNext()){
+        if (current.getNext().getData().equals(data)){
+          current.setNext(new Node<G>(newData, current.getNext()));
+          return; 
+        }
+      }
+    }
   }
 
   public void insertAtHead(Node<G> newNode){
@@ -81,15 +103,4 @@ public class LinkedList<G>{
     
     return "[" + str.substring(0, str.length()-2) + "]";
   }
-
-
-
-
-
-
-
-
-
-
-  
 }
