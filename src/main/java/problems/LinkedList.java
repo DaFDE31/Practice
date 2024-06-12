@@ -33,7 +33,12 @@ public class LinkedList<G>{
       headNode = newNode;
     }
     else{
-      
+      Node current = newNode;
+      while (current.hasNext()){
+        current = current.getNext();
+      }
+      current.setNext(headNode);
+      headNode = newNode;
     }
   }
 
@@ -45,15 +50,48 @@ public class LinkedList<G>{
     if (head == null){
       head = newNode;
     }
-    Node current = head;
-    while(current.hasNext()){
-      current = current.getNextNode();
+    else{
+      Node current = head;
+      while(current.hasNext()){
+        current = current.getNext();
+      }
+      current.setNext(newNode);
     }
-    current.setNextNode(newNode);
   }
 
   public void insertAtEnd(G data){
     insertAtEnd(new Node(data));
+  }
+
+  public boolean contains(G data){
+    Node current = head;
+      while(current != null){
+        if (current.getData().equals(data)){
+          return true;
+        }
+        current = current.getNext();
+      }
+    return false;
+  }
+
+  public int size(){
+    int count = 0;
+    Node current = head;
+      while(current != null){
+        count++;
+      }
+    return false;
+    return count;
+  }
+
+  public String toString(){
+    String str = "";
+    Node current = head;
+    while(current != null){
+        str += current.getData().toString() + ", ";
+    }
+    
+    return "[" + str.substring(0, str.length()-2) + "]";
   }
 
 
