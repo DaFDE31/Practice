@@ -1,39 +1,26 @@
 package problems;
 
-class Node<G>{
-  private G data;// The data and value held inside the node
-  private Node nextNode; // The Node that the current one is pointing to
-  public Node(){}
-  public Node(G data){this.data = data;}
-  public Node(G data, Node nextNode){
-      this.data = data;
-      this.nextNode = nextNode;
-  }
-  public hasNext(){
-    return next != null;
-  }
-  //Make getters and setters.
-}
+
 public class LinkedList<G>{
   private Node<G> headNode;
   public LinkedList (){}
-  public LinkedList (Node n){
+  public LinkedList (Node<G> n){
     headNode = n;
   }
   public LinkedList (G n){
-    headNode.setData(n);
+    headNode = new Node<>(n);
   }
 
-  private void insertNode(Node newNode){
+  private void insertNode(Node<G> newNode){
     
   }
 
-  public void insertAtHead(Node newNode){
+  public void insertAtHead(Node<G> newNode){
     if (headNode == null){
       headNode = newNode;
     }
     else{
-      Node current = newNode;
+      Node<G> current = newNode;
       while (current.hasNext()){
         current = current.getNext();
       }
@@ -43,15 +30,15 @@ public class LinkedList<G>{
   }
 
   public void insertAtHead(G newData){
-      headNode = new Node(newData, headNode);
+      headNode = new Node<G>(newData, headNode);
   }
   
-  public void insertAtEnd(Node newNode){
-    if (head == null){
-      head = newNode;
+  public void insertAtEnd(Node<G> newNode){
+    if (headNode == null){
+      headNode = newNode;
     }
     else{
-      Node current = head;
+      Node<G> current = headNode;
       while(current.hasNext()){
         current = current.getNext();
       }
@@ -60,11 +47,11 @@ public class LinkedList<G>{
   }
 
   public void insertAtEnd(G data){
-    insertAtEnd(new Node(data));
+    insertAtEnd(new Node<G>(data));
   }
 
   public boolean contains(G data){
-    Node current = head;
+    Node<G> current = headNode;
       while(current != null){
         if (current.getData().equals(data)){
           return true;
@@ -76,19 +63,20 @@ public class LinkedList<G>{
 
   public int size(){
     int count = 0;
-    Node current = head;
+    Node<G> current = headNode;
       while(current != null){
         count++;
+        current = current.getNext();
       }
-    return false;
     return count;
   }
 
   public String toString(){
-    String str = "";
-    Node current = head;
+    StringBuilder str = new StringBuilder();
+    Node<G> current = headNode;
     while(current != null){
-        str += current.getData().toString() + ", ";
+        str.append(current.getData().toString()).append(", ");
+        current = current.getNext();
     }
     
     return "[" + str.substring(0, str.length()-2) + "]";
