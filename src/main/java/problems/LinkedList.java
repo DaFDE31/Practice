@@ -9,7 +9,9 @@ class Node<G>{
       this.data = data;
       this.nextNode = nextNode;
   }
-
+  public hasNext(){
+    return next != null;
+  }
   //Make getters and setters.
 }
 public class LinkedList<G>{
