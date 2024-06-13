@@ -75,6 +75,23 @@ public class LinkedList<G>{
     insertAtEnd(new Node<G>(data));
   }
 
+  public void remove(G data){
+    if (headNode != null && headNode.getData().equals(data)){
+      headNode = headNode.getNext();
+    }
+    else{
+      Node<G> current = headNode;
+      while(current.hasNext()){
+        if (current.getNext().getData().equals(data)){
+          current.setNext(current.getNext().getNext());
+          return;
+        }
+        current = current.getNext();
+      }
+    }
+    
+  }
+
   public boolean contains(G data){
     Node<G> current = headNode;
       while(current != null){
