@@ -5,122 +5,59 @@ import org.junit.Test;
 
 public class LinkedTest {
 
-    Questions tester = new Questions();
+    LinkedList<Integer> intTest = new LinkedList<>();
+    LinkedList<String> strTest = new LinkedList<>("Worldly");
     @Test
-    public void gcfTest1(){
-        int expected = 5;
-        int actual = Questions.gcf(5,10);
+    public void initTest(){
+        String expected = "[]";
+        String actual = intTest.toString();
+        Assert.assertEquals(expected, actual);
+        expected = "[Wordly]";
+        actual = strTest.toString();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void gcfTest2(){
-        int expected = 13;
-        int actual = Questions.gcf(1,13);
+    public void HeadTest(){
+        intTest.insertAtHead(2);
+        strTest.insertAtHead("Wow");
+        String expected = "[2]";
+        String actual = intTest.toString();
+        Assert.assertEquals(expected, actual);
+        expected = "[Wow, Wordly]";
+        actual = strTest.toString();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void gcfTest3(){
-        int expected = 10; // Replaced the 5 here with 10
-        int actual = Questions.gcf(100,30);
+    public void HeadTest2(){
+        intTest.insertAtHead(new Node<Integer>(3, new Node<Integer>(5)));
+        String expected = "[3, 5, 2]";
+        String actual = intTest.toString();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void gcfTest4(){
-        int expected = 2;
-        int actual = Questions.gcf(100,2);
-        Assert.assertEquals(expected, actual);
-    }
-    @Test
-    public void gcfTest5(){
-        int expected = 45;
-        int actual = Questions.gcf(45,90);
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void cutTest1(){
-        String [] expected = {"Ho", "Wd"};
-        String [] actual = Questions.cut(new String[]{"Hello", "World"});
-        Assert.assertArrayEquals(expected, actual);
-
-    }
-
-    @Test
-    public void cutTest2(){
-        String [] expected = {"To", "Te", "Ed"};
-        String [] actual = Questions.cut(new String[]{"To", "The", "End"});
-        Assert.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void IndexReplaceTest1(){
-        Integer [] expected = {1,2,3,4};
-        Integer [] array = {1,2,6,4};
-        tester.replaceAtindex(array, 2, 3);
-        Assert.assertArrayEquals(expected, array);
-    }
-
-    @Test
-    public void IndexReplaceTest2(){
-        Integer [] expected = {10,9,8,7,6};
-        Integer [] array = {10,9,8,7,2};
-        tester.replaceAtindex(array, 4, 6);
-        Assert.assertArrayEquals(expected, array);
-    }
-
-    @Test
-    public void replaceTest(){
-        Integer [] expected = {1,2,3,4};
-        Integer [] array = {1,2,6,4};
-        tester.replace(array, 6, 3);
-        Assert.assertArrayEquals(expected, array);
-    }
-
-    @Test
-    public void replaceTest2(){
-        Integer [] expected = {1,9,8,1,1};
-        Integer [] array = {10,9,8,10,10};
-        tester.replace(array, 10, 1);
-        Assert.assertArrayEquals(expected, array);
-    }
-
-    @Test
-    public void replaceTest3(){
-        String [] expected = {"Hello", "My", "Friends"};
-        String [] array = {"Hello", "All", "Friends"};
-        tester.replace(array, "All", "My");
-        Assert.assertArrayEquals(expected, array);
-    }
-
-    @Test
-    public void longestTest(){
-        int expected = 5;
-        Integer[][] he = {{}, {1,2,3,4,5}};
-        int actual = tester.longestArray(he);
+    public void EndTest(){
+        intTest.insertAtEnd(7);
+        strTrst.insertAtEnd(new Node<String>("Plan", new Node<String>("Doubly")))
+        String expected = "[3, 5, 2, 7]";
+        String actual = intTest.toString();
+         Assert.assertEquals(expected, actual);
+        expected = "[Wow, Wordly, Plan, Doubly]";
+        actual = strTest.toString();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void palindromeTest1(){
-        Assert.assertTrue(tester.palindrome("girafarig"));
+    public void ReplaceTest(){
+        intTest.insertAtEnd(2, 6);
+        strTrst.insertAtEnd("Doubly", "Wildy")
+        String expected = "[3, 5, 6, 7]";
+        String actual = intTest.toString();
+         Assert.assertEquals(expected, actual);
+        expected = "[Wow, Wordly, Plan, Wildy]";
+        actual = strTest.toString();
+        Assert.assertEquals(expected, actual);
     }
-    @Test
-    public void palindromeTest2(){
-        Assert.assertFalse(tester.palindrome("money"));
-    }
-    @Test
-    public void palindromeTest3(){
-        Integer [] array = {1,2,3,4};
-        Assert.assertFalse(tester.palindrome(array));
-    }
-    @Test
-    public void palindromeTest4(){
-        Integer [] array = {1,2,3,4,4,3,2,1};
-        Assert.assertTrue(tester.palindrome(array));    }
-
-    
-
 }
