@@ -92,6 +92,17 @@ public class LinkedList<G>{
     
   }
 
+  public void replace(G data, G newData){
+    Node<G> current = headNode;
+    while (current != null){
+      if (current.getData().equals(data)){
+        current.setData(newData);
+        return;
+      }
+      current = current.getNext();
+    }
+  }
+
   public boolean contains(G data){
     Node<G> current = headNode;
       while(current != null){
