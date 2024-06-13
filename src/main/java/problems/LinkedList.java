@@ -18,6 +18,7 @@ public class LinkedList<G>{
         current.setNext(new Node<G>(newData, current.getNext()));
         return; 
       }
+      current = current.getNext();
     }
   }
 
@@ -33,7 +34,9 @@ public class LinkedList<G>{
           current.setNext(new Node<G>(newData, current.getNext()));
           return; 
         }
+        current = current.getNext();
       }
+
     }
   }
 
@@ -100,7 +103,9 @@ public class LinkedList<G>{
         str.append(current.getData().toString()).append(", ");
         current = current.getNext();
     }
-    
+    if (str.toString().isEmpty()){
+      return "[]";
+    }
     return "[" + str.substring(0, str.length()-2) + "]";
   }
 }
