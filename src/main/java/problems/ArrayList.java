@@ -50,6 +50,7 @@ public class ArrayList <G>{
 
     public boolean contains(G value){
         for (G v : list){
+            if (v == null) break;
             if (v.equals(value)){
                 return true;
             }
@@ -69,6 +70,9 @@ public class ArrayList <G>{
             size--;
 
         }
+        else{
+            throw new IndexOutOfBoundsException("Index " + index + " is out of bounds for list of size " +size + ".");
+        }
     }
 
     public G get (int index){
@@ -82,6 +86,7 @@ public class ArrayList <G>{
     }
     public int index (G value){
         for (int i = 0; i < list.length; i++){
+            if (list[i] == null) break;  
             if (list[i].equals(value)){
                 return i;
             }
@@ -103,9 +108,11 @@ public class ArrayList <G>{
     public String toString(){
         String ret = "";
         for (G val : list){
-            if (val != null){
-                ret += val.toString() + ", ";
+            if (val == null){
+                break;
             }
+            ret += val.toString() + ", ";
+
         }
         if (Objects.equals(ret, "")){
             return "[]";

@@ -40,7 +40,7 @@ public class LinkedTest {
     @Test
     public void EndTest(){
         intTest.insertAtEnd(7);
-        strTrst.insertAtEnd(new Node<String>("Plan", new Node<String>("Doubly")))
+        strTest.insertAtEnd(new Node<String>("Plan", new Node<String>("Doubly")));
         String expected = "[3, 5, 2, 7]";
         String actual = intTest.toString();
          Assert.assertEquals(expected, actual);
@@ -52,7 +52,7 @@ public class LinkedTest {
     @Test
     public void ReplaceTest(){
         intTest.insertAtEnd(2, 6);
-        strTrst.insertAtEnd("Doubly", "Wildy")
+        strTest.insertAtEnd("Doubly", "Wildy");
         String expected = "[3, 5, 6, 7]";
         String actual = intTest.toString();
          Assert.assertEquals(expected, actual);

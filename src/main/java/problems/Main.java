@@ -27,6 +27,17 @@ public class Main {
         System.out.println(linkTest);*/
         ArrayList<Integer> test = new ArrayList<>();
         test.add(5);
+        test.add(2);
+        test.add(6);
+        test.add(9,1);
+        test.replace(5,3);
+        test.remove(3);
+        System.out.println(test.get(1));
+
+        System.out.println(test.size());
+        System.out.println(test.contains(5));
+        System.out.println(test.contains(4));
+        System.out.println(test);
 
 
     }
