@@ -1,6 +1,7 @@
 package problems;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class ArrayList <G>{
     G[] list;
@@ -93,7 +94,24 @@ public class ArrayList <G>{
     public ArrayList<G> union(ArrayList<G> otherList){
         return new ArrayList<G>();
     }
-    public ArrayList<G> difference(ArrayList<G> otherList){
+    public ArrayList<G> difference(ArrayList<G> otherList) {
         return new ArrayList<G>();
+    }
+
+
+    //DO NOT EDIT THIS BELOW THIS LINE ////////////////////////////////////////////////////////////
+    public String toString(){
+        String ret = "";
+        for (G val : list){
+            if (val != null){
+                ret += val.toString() + ", ";
+            }
+        }
+        if (Objects.equals(ret, "")){
+            return "[]";
+        }
+        else{
+            return "[" + ret.substring(0, ret.length()-2) + "]";
+        }
     }
 }
