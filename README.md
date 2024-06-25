@@ -15,3 +15,13 @@
 ## Problem 3: Hard
 ### Timer Class
 * So this one is a little different. Here, you should go into Timer.java file to fill out an all the methods laid out. All the prompts are in the file itself.
+
+## Part 4: ArrayLists
+* Here I would like you to make an arraylist from scratch. Your code should be able to fulfill the basic uses of the ArrayList you usually import.
+* The code also goes over Generics in java. If you don't know what those are there are examples in the code and you may ask me about it or do your own research. Essentially think of them as placeholders for the datatype you wan to use in code.
+
+## Part 5: Linked Lists
+* Good news, there's no work to be done here! I've already done the work all you have to do is review it.
+* This introduces linked lists, a type of data structure where each member points to the next one, like the picture below
+  ### INSERT PICTURE
+* The code in the LinkedList and Node files show how to make a linked lists and how to se generics with it.
