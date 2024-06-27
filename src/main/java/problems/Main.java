@@ -31,12 +31,14 @@ public class Main {
         test.add(6);
         test.add(9,1);
         test.replace(5,3);
-        test.remove(3);
+        test.removeAtindex(3);
         System.out.println(test.get(1));
 
         System.out.println(test.size());
         System.out.println(test.contains(5));
         System.out.println(test.contains(4));
+        System.out.println(test.index(2));
+        System.out.println(test.get(0));
         System.out.println(test);
 
 

@@ -58,9 +58,9 @@ public class ArrayList <G>{
         return false;
     }
     public void remove(G value){
-        remove(index(value));
+        removeAtindex(index(value));
     }
-    public void remove(int index){
+    public void removeAtindex(int index){
         if (index > -1 && index < size){
             G[] temp = (G[]) new Object[list.length -1];
             System.arraycopy(list,0, temp, 0, index);
