@@ -29,7 +29,7 @@ public class Main {
         test.add(5);
         test.add(2);
         test.add(6);
-        test.add(9,1);
+        test.insert(9,1);
         test.replace(5,3);
         test.removeAtindex(3);
         System.out.println(test.get(1));
