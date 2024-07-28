@@ -5,7 +5,17 @@ public class Questions<G> {
     For this code, return the greatest common denominator of the two parameters, x and y
     */
     public static int gcf(int x, int y){
-        return 0;
+        if (x==y){
+            return x;
+        }
+        int factor = Math.min(x,y);
+        while (factor > 1){
+            if (x % factor == 0 && y % factor == 0){
+                return factor;
+            }
+            factor--;
+        }
+        return 1;
     }
 
     /*
@@ -14,8 +24,10 @@ public class Questions<G> {
     EX: ["Hello", "World"] -> ["Ho", "Wd"]
     EX: ["To", "The", "End"] -> ["To", "Te", "Ed"]
      */
-    public static String[] cut(String[] anArray){
-        return new String[0];
+    public static void cut(String[] anArray){
+        for (int i = 0; i < anArray.length; i++){
+            anArray[i] = ""+ anArray[i].charAt(0) + anArray[i].charAt(anArray[i].length()-1);
+        }
     }
 
     public void replaceAtindex(G[] anArray, int index, G value){
@@ -51,6 +63,7 @@ public class Questions<G> {
             if(str.charAt(i) != str.charAt(end)){
                 return false;
             }
+            end--;
         }
         return true;
     }
@@ -60,6 +73,7 @@ public class Questions<G> {
             if(!array[i].equals(array[end])){
                 return false;
             }
+            end--;
         }
         return true;
     }
@@ -71,10 +85,5 @@ public class Questions<G> {
             }
         }
         return false;
-    }
-
-    public G[] intersection(G[] arrayOne, G[] arrayTwo){
-        G[] answer = (G[])new Object[Math.max(arrayOne.length, arrayTwo.length)];
-        return answer; // replace this line with the return array.
     }
 }

@@ -15,7 +15,7 @@ public class QuestionTest {
 
     @Test
     public void gcfTest2(){
-        int expected = 13;
+        int expected = 1;
         int actual = Questions.gcf(1,13);
         Assert.assertEquals(expected, actual);
     }
@@ -43,7 +43,8 @@ public class QuestionTest {
     @Test
     public void cutTest1(){
         String [] expected = {"Ho", "Wd"};
-        String [] actual = Questions.cut(new String[]{"Hello", "World"});
+        String [] actual = new String[]{"Hello", "World"};
+        Questions.cut(actual);
         Assert.assertArrayEquals(expected, actual);
 
     }
@@ -51,7 +52,8 @@ public class QuestionTest {
     @Test
     public void cutTest2(){
         String [] expected = {"To", "Te", "Ed"};
-        String [] actual = Questions.cut(new String[]{"To", "The", "End"});
+        String [] actual = new String[]{"To", "The", "End"};
+        Questions.cut(actual);
         Assert.assertArrayEquals(expected, actual);
     }
 
@@ -119,8 +121,20 @@ public class QuestionTest {
     @Test
     public void palindromeTest4(){
         Integer [] array = {1,2,3,4,4,3,2,1};
-        Assert.assertTrue(tester.palindrome(array));    }
+        Assert.assertTrue(tester.palindrome(array));
+    }
 
-    
+    @Test
+        public void containsTest(){
+            Integer [] array = {1, 2, 3, 4};
+            Assert.assertTrue(tester.contains(array, 3));
+    }
+
+    @Test
+    public void containsTest2() {
+        Integer[] array = {1, 2, 3, 4};
+        Assert.assertFalse(tester.contains(array, 5));
+
+    }
 
 }

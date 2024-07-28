@@ -117,6 +117,9 @@ public class ArrayList <G>{
 
 
     // EXTRA CREDIT. If you do these you get bragging rights, and possibly money. ///////////
+
+
+
     //TODO Return an intersection of two lists.
     // [1,2,3].instersection([5,6,3,2]) returns [2,3]
     public ArrayList<G> intersection(ArrayList<G> otherList){
