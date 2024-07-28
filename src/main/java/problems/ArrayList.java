@@ -31,6 +31,7 @@ public class ArrayList <G>{
 
     //TODO Make a method that will insert a value into the list at the specified index.
     // So insert(3,2) should insert 3 into the second index.
+    // HINT: LOOKUP HOW TO USE System.arraycopy
     public void insert(G value, int index){
         G[] temp;
         if (size >= list.length){
