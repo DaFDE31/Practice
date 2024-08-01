@@ -1,11 +1,14 @@
 package problems;
 
 public class Node<G> {
-        private G data;// The data and value held inside the node
-        private Node<G> nextNode; // The Node that the current one is pointing to
-        public Node(){}
-        public Node(G data){this.data = data;}
-        public Node(G data, Node<G> nextNode){
+    private G data;// The data and value held inside the node
+    private Node<G> nextNode; // The pointer to the next node in the list
+
+    public Node(){}
+
+    public Node(G data){this.data = data;}
+
+    public Node(G data, Node<G> nextNode){
             this.data = data;
             this.nextNode = nextNode;
         }
@@ -26,8 +29,7 @@ public class Node<G> {
         this.nextNode = nextNode;
     }
 
-    public boolean hasNext(){
-            return nextNode != null;
-        }
-        //Make getters and setters.
+    public boolean hasNext() {
+        return nextNode != null;
+    }
 }

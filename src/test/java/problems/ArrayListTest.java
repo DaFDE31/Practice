@@ -20,7 +20,7 @@ public class ArrayListTest {
         intList = new ArrayList<>(new Integer[]{0,1,2,3,4});
         intList.add(5);
         Assert.assertEquals("[0, 1, 2, 3, 4, 5]", intList.toString());
-
+        strList = new ArrayList<>();
         strList.add("Dog");
         Assert.assertEquals("[Dog]", strList.toString());
     }
@@ -80,4 +80,44 @@ public class ArrayListTest {
         strList.remove("Am");
         Assert.assertEquals("[I, Great]", strList.toString());
     }
+
+    @Test
+    public void intersectionTest(){
+        intList = new ArrayList<>(new Integer[]{0,1,2,3,4,5});
+        ArrayList<Integer> intList2 = new ArrayList<>(new Integer[]{4,5,6,7,8,9});
+        Assert.assertEquals("[4, 5]", intList.intersection(intList2).toString());
+    }
+
+    @Test
+    public void unionTest(){
+        intList = new ArrayList<>(new Integer[]{0,1,2,3,4,5});
+        ArrayList<Integer> intList2 = new ArrayList<>(new Integer[]{4,5,6,7,8,9});
+        Assert.assertEquals("[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]", intList.union(intList2).toString());
+    }
+
+    @Test
+    public void differenceTest(){
+        intList = new ArrayList<>(new Integer[]{0,1,2,3,4,5});
+        ArrayList<Integer> intList2 = new ArrayList<>(new Integer[]{4,5,6,7,8,9});
+        Assert.assertEquals("[0, 1, 2, 3, 6, 7, 8, 9]", intList.difference(intList2).toString());
+    }
+
+    @Test
+    public void intersectionTest2(){
+        strList = new ArrayList<>(new String[]{"Hello", "World"});
+        ArrayList<String> strList2 = new ArrayList<>(new String[]{"Hello", "People"});
+        Assert.assertEquals("[Hello]", strList.intersection(strList2).toString());
+    }
+
+    @Test
+    public void unionTest2(){
+        strList = new ArrayList<>(new String[]{"Hello", "World"});
+        ArrayList<String> strList2 = new ArrayList<>(new String[]{"Hello", "People"});
+        Assert.assertEquals("[Hello, World, People]", strList.union(strList2).toString());}
+
+    @Test
+    public void differenceTest2(){
+        strList = new ArrayList<>(new String[]{"Hello", "World"});
+        ArrayList<String> strList2 = new ArrayList<>(new String[]{"Hello", "People"});
+        Assert.assertEquals("[World, People]", strList.difference(strList2).toString());}
 }

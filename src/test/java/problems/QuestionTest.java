@@ -98,10 +98,18 @@ public class QuestionTest {
     }
 
     @Test
-    public void longestTest(){
+    public void maxTest(){
         int expected = 5;
-        Integer[][] he = {{}, {1,2,3,4,5}};
-        int actual = tester.longestArray(he);
+        int[] he = {1,2,3,4,5};
+        int actual = tester.max(he);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void maxTest2(){
+        int expected = 8;
+        int[] he = {6, 8, 2, 4, 1};
+        int actual = tester.max(he);
         Assert.assertEquals(expected, actual);
     }
 
@@ -115,24 +123,24 @@ public class QuestionTest {
     }
     @Test
     public void palindromeTest3(){
-        Integer [] array = {1,2,3,4};
+        int [] array = {1,2,3,4};
         Assert.assertFalse(tester.palindrome(array));
     }
     @Test
     public void palindromeTest4(){
-        Integer [] array = {1,2,3,4,4,3,2,1};
+        int [] array = {1,2,3,4,4,3,2,1};
         Assert.assertTrue(tester.palindrome(array));
     }
 
     @Test
         public void containsTest(){
-            Integer [] array = {1, 2, 3, 4};
+            int [] array = {1, 2, 3, 4};
             Assert.assertTrue(tester.contains(array, 3));
     }
 
     @Test
     public void containsTest2() {
-        Integer[] array = {1, 2, 3, 4};
+        int [] array = {1, 2, 3, 4};
         Assert.assertFalse(tester.contains(array, 5));
 
     }

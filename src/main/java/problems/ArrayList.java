@@ -2,6 +2,7 @@ package problems;
 import java.util.Objects;
 
 public class ArrayList <G>{
+
     private G[] list; // The array that holds the values
     private int size; // A count of how many non-null values are in the list
 
@@ -16,14 +17,14 @@ public class ArrayList <G>{
     }
 
     public void add(G value){ // This method adds a value to the list
-        if (size >= list.length){
+        if (size >= list.length){// This if statement adds 5 more empty spots in the list if it is full
             G[] temp = (G[]) new Object[list.length +5];
             System.arraycopy(list,0,temp,0, list.length);
-            //**URGENT**//
+            //TODO **URGENT**//
             // Look up how to use System.arraycopy, it'll help a lot. ///////////////////////////
             list = temp;
         }
-        // This if statement adds 5 more empty spots in the list if it is full
+
         list[size] = value;
         size++;
 
