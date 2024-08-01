@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class QuestionTest {
+
+    Questions tester = new Questions();
     @Test
     public void gcfTest1(){
         int expected = 5;
@@ -13,7 +15,7 @@ public class QuestionTest {
 
     @Test
     public void gcfTest2(){
-        int expected = 13;
+        int expected = 1;
         int actual = Questions.gcf(1,13);
         Assert.assertEquals(expected, actual);
     }
@@ -41,7 +43,8 @@ public class QuestionTest {
     @Test
     public void cutTest1(){
         String [] expected = {"Ho", "Wd"};
-        String [] actual = Questions.cut(new String[]{"Hello", "World"});
+        String [] actual = new String[]{"Hello", "World"};
+        Questions.cut(actual);
         Assert.assertArrayEquals(expected, actual);
 
     }
@@ -49,8 +52,97 @@ public class QuestionTest {
     @Test
     public void cutTest2(){
         String [] expected = {"To", "Te", "Ed"};
-        String [] actual = Questions.cut(new String[]{"To", "The", "End"});
+        String [] actual = new String[]{"To", "The", "End"};
+        Questions.cut(actual);
         Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void IndexReplaceTest1(){
+        Integer [] expected = {1,2,3,4};
+        Integer [] array = {1,2,6,4};
+        tester.replaceAtindex(array, 2, 3);
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
+    public void IndexReplaceTest2(){
+        Integer [] expected = {10,9,8,7,6};
+        Integer [] array = {10,9,8,7,2};
+        tester.replaceAtindex(array, 4, 6);
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
+    public void replaceTest(){
+        Integer [] expected = {1,2,3,4};
+        Integer [] array = {1,2,6,4};
+        tester.replace(array, 6, 3);
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
+    public void replaceTest2(){
+        Integer [] expected = {1,9,8,1,1};
+        Integer [] array = {10,9,8,10,10};
+        tester.replace(array, 10, 1);
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
+    public void replaceTest3(){
+        String [] expected = {"Hello", "My", "Friends"};
+        String [] array = {"Hello", "All", "Friends"};
+        tester.replace(array, "All", "My");
+        Assert.assertArrayEquals(expected, array);
+    }
+
+    @Test
+    public void maxTest(){
+        int expected = 5;
+        int[] he = {1,2,3,4,5};
+        int actual = tester.max(he);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void maxTest2(){
+        int expected = 8;
+        int[] he = {6, 8, 2, 4, 1};
+        int actual = tester.max(he);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void palindromeTest1(){
+        Assert.assertTrue(tester.palindrome("girafarig"));
+    }
+    @Test
+    public void palindromeTest2(){
+        Assert.assertFalse(tester.palindrome("money"));
+    }
+    @Test
+    public void palindromeTest3(){
+        int [] array = {1,2,3,4};
+        Assert.assertFalse(tester.palindrome(array));
+    }
+    @Test
+    public void palindromeTest4(){
+        int [] array = {1,2,3,4,4,3,2,1};
+        Assert.assertTrue(tester.palindrome(array));
+    }
+
+    @Test
+        public void containsTest(){
+            int [] array = {1, 2, 3, 4};
+            Assert.assertTrue(tester.contains(array, 3));
+    }
+
+    @Test
+    public void containsTest2() {
+        int [] array = {1, 2, 3, 4};
+        Assert.assertFalse(tester.contains(array, 5));
+
     }
 
 }

@@ -5,7 +5,6 @@ import org.junit.Test;
 
 public class TimerTest {
 
-    Timer tester = new Timer();
     @Test
     public void timeTest1(){
         Timer con = new Timer();
@@ -24,6 +23,7 @@ public class TimerTest {
 
     @Test
     public void setTest1(){
+        Timer tester = new Timer();
         tester.setTime(4832);
         String expected = "1:20:32";
         String actual = tester.toString();
@@ -32,6 +32,7 @@ public class TimerTest {
 
     @Test
     public void setTest2(){
+        Timer tester = new Timer();
         tester.setTime(1,0,0);
         String expected = "1:0:0";
         String actual = tester.toString();
@@ -40,23 +41,26 @@ public class TimerTest {
 
     @Test
     public void addTest1(){
+        Timer tester = new Timer();
         tester.addTime(3600);
-        String expected = "1:0:0"; // Replace this 2 with 1
+        String expected = "1:0:0";
         String actual = tester.toString();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void addTest2(){
+        Timer tester = new Timer(3600);
         tester.addTime(4,20,100);
-        String expected = "4:21:40";   // Replace the 6 that's here with 4
+        String expected = "5:21:40";
         String actual = tester.toString();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     public void secondsTest1(){
-        tester.setTime(6,21,40); // Add this line
+        Timer tester = new Timer();
+        tester.setTime(6,21,40);
         tester.addSecond();
         String expected = "6:21:41";
         String actual = tester.toString();
@@ -65,6 +69,7 @@ public class TimerTest {
 
     @Test
     public void secondsTest2(){
+        Timer tester = new Timer();
         tester.setTime(1,0,59);
         tester.addSecond();
         String expected = "1:1:0";
@@ -74,6 +79,7 @@ public class TimerTest {
 
     @Test
     public void subtractTest1(){
+        Timer tester = new Timer();
         tester.setTime(1,0,0);
         tester.subtractSecond();
         String expected = "0:59:59";
@@ -83,6 +89,7 @@ public class TimerTest {
 
     @Test
     public void subtractTest2(){
+        Timer tester = new Timer();
         tester.setTime(0,0,0);
         tester.subtractSecond();
         String expected = "0:0:0";
